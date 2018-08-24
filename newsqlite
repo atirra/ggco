@@ -1,0 +1,12 @@
+import sqlite3
+
+cnn = sqlite3.connect('mydata.db')
+mycursor = cnn.cursor()
+
+# create table
+sql_new_table = '''create table products
+(code text, desc text, value real)'''
+mycursor.execute(sql_new_table)
+
+cnn.commit()
+mycursor.close()
